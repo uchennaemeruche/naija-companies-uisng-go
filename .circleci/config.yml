@@ -14,6 +14,5 @@ jobs:
       - go/mod-download
       - go/save-cache
       - run:
-         name: run Test
+         name: Run Test
          command: go test -v
-         
