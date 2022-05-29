@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func setupRouter() *gin.Engine {
 	router := gin.Default()
 
 	router.GET("/", func(c *gin.Context) {
@@ -33,5 +33,10 @@ func main() {
 		c.JSON(http.StatusCreated, result)
 	})
 
+	return router
+}
+
+func main() {
+	router := setupRouter()
 	router.Run()
 }
